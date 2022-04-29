@@ -7,7 +7,6 @@
         this.bars = [];
         this.ball = null;
         this.playing = false;
-
     }
 
     self.Board.prototype = {
@@ -34,8 +33,8 @@
 
         board.ball = this;
         this.kind = "circle";
-
     }
+
     self.Ball.prototype = {
         move: function(){
             this.x += (this.speed_x * this.direction);
@@ -62,7 +61,6 @@
             else this.direction = 1;
         }
     }
-
 })();
 
 (function(){
@@ -182,19 +180,19 @@ window.requestAnimationFrame(controller);
 
 document.addEventListener("keydown", function(ev){
   
-    if(ev.keyCode ==38){
+    if(ev.key =="ArrowUp"){
         ev.preventDefault();
         bar.up();
     }
-    else if(ev.keyCode == 40){
+    else if(ev.key == "ArrowDown"){
         ev.preventDefault();
         bar.down();
-    }else if(ev.keyCode ===87){
+    }else if(ev.key ==="w"){
         ev.preventDefault();
         //W
         bar_2.up();
     }
-    else if(ev.keyCode === 83){
+    else if(ev.key === "s"){
         ev.preventDefault();
         //S
         bar_2.down();
